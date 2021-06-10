@@ -26,7 +26,7 @@
         global $session_user_username;
         $username=is_logged_user()==true? "<b><u><i>".$_SESSION[$session_user_username]."</i></u></b>" : "User Login";
         echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-item nav-link '.$active[0].' " href="index.php">Home <span class="sr-only">(current)</span></a>
                   <a class="nav-item nav-link '.$active[1].' " href="admin_login.php">Admin Login</a>
@@ -62,7 +62,7 @@
     /*####Redirect to new Page####*/
     function redirect($address)
     {
-        return header("Location: http://localhost/e_travel_management/$address");
+        return header("Location: http://localhost/demo/e_travel_management/$address");
     }
 
     /*####showing error message####*/

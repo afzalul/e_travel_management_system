@@ -6,6 +6,7 @@
         redirect("user_notification.php");
     } 
 ?>
+<script src="1_data_valid.js">   </script>
 <body>
     
         <h1 id="first">E-Travel Management System</h1>
@@ -15,7 +16,7 @@
         <div class="container">
         <div class="col-sm-6">
            <h2>User Login</h2>
-            <form action="user_login.php" method="post">
+            <form action="user_login.php" method="post" name="user_login">
               <?php    
                     if(isset($_POST['submit']))
                     {
@@ -24,7 +25,8 @@
                 ?>
                <div class="form-group">
                    <label for="username">Username</label>
-                   <input type="text" name="username" class="form-control" required>
+                   <input type="text" name="username" class="form-control" required onchange="validate_username('user_login','username')">
+                   <h5 id="username"></h5>
                </div>
                 
                 <div class="form-group">
@@ -32,8 +34,8 @@
                   <input type="password" name="password" class="form-control" required>
                </div>
                
-                
                 <input type="submit" name="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+                
             </form>
             <br>
             <p><a href="user_password_recover.php">Forgot Password?</a></p>

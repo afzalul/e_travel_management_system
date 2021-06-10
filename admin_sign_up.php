@@ -4,10 +4,8 @@
     {
         redirect("admin_login.php");
     }
+    include "header_footer/header.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php include "header_footer/header.php"; ?>
 <body>
     <?php  admin_navbar(["","active","","","","","","","",""]); ?>
     <div class="container">  

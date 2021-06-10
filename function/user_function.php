@@ -53,10 +53,21 @@
             <a class="nav-link '.$active[4].'" href="user_notification.php">Notification</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user_logout.php">Logout</a>
+                <form action="user_update.php" method="post">
+                <input type="submit" name="user_logout" class="btn btn-primary" value="Logout">
+                </form>
           </li>
         </ul>
         <br>';
+    }
+
+    function user_logout()
+    {
+    
+        global $session_user_username, $session_user_user_id;
+        unset($_SESSION[$session_user_username]);
+        unset($_SESSION[$session_user_user_id]);
+        redirect("user_login.php");
     }
 
  /*

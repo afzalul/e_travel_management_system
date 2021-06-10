@@ -4,11 +4,8 @@
     {
         redirect("admin_login.php");
     }
-        
+     include "header_footer/header.php";    
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php include "header_footer/header.php"; ?>
 <body>
     <?php  admin_navbar(["","","","","","","active","","",""]); ?>
         <ul>
@@ -39,8 +36,8 @@
             $previous=($page-1)>0?$page-1:1;
             $next=$page+1;
             echo '<ul class="pager">';
-            echo '<li class="previous"><a position="left" href="join_request.php?page='.$previous.'">Previous</a></li>';
-            echo '<li class="next"><a href="join_request.php?page='.$next.'">Next</a></li>
+            echo '<li class="previous"><a position="left" href="admin_user_join_request.php?page='.$previous.'">Previous</a></li>';
+            echo '<li class="next"><a href="admin_user_join_request.php?page='.$next.'">Next</a></li>
             </ul>';
         }
         include "header_footer/e-travel_footer.php";

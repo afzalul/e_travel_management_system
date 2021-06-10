@@ -980,10 +980,20 @@
             <a class="nav-link '.$active[8].'"  href="admin_feedback.php">Message</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin_logout.php">Logout</a>
+                <form action="admin_update.php" method="post">
+                <input type="submit" name="admin_logout" class="btn btn-primary" value="Logout">
+                </form>
           </li>
         </ul>
         <br><br>';
+    }
+
+    function admin_logout()
+    {
+        global $session_admin_username, $session_admin_id;
+        unset($_SESSION[$session_admin_username]);
+        unset($_SESSION[$session_admin_id]);
+        redirect("admin_login.php");
     }
 
 ?>
